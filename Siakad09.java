@@ -1,31 +1,34 @@
 import java.util.Scanner;
 public class Siakad09 {
-    public static void main(String [] args) {
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String nama, nim;
         char kelas;
         byte absen;
-        double nilaiKuis, nilaiTugas, nilaiUjian, nilaiAkhir;
-        System.out.print("Masukan Nama: ");
+        double nilaiKuis, nilaiTugas, nilaiUTS, nilaiUAS, nilaiAkhir;
+        
+        System.out.print("Masukkan nama: ");
         nama = sc.nextLine();
-        System.out.print("Masukan NIM: ");
+        System.out.print("Masukkan NIM: ");
         nim = sc.nextLine();
-        System.out.print("Masukan Kelas: ");
+        System.out.print("Masukkan kelas: ");
         kelas = sc.nextLine().charAt(0);
-        System.out.print("Masukan Nomor Absen: ");
+        System.out.print("Masukkan nomor absen: ");
         absen = sc.nextByte();
-
-        System.out.print("Masukan Nilai Kuis: ");
+        System.out.print("Masukkan nilai kuis: ");
         nilaiKuis = sc.nextDouble();
-        System.out.print("Masukan Nilai Tugas: ");
+        System.out.print("Masukkan nilai tugas: ");
         nilaiTugas = sc.nextDouble();
-        System.out.print("Masukan Nilai Ujian: ");
-        nilaiUjian = sc.nextDouble();
-
-        nilaiAkhir = (nilaiKuis + nilaiTugas + nilaiUjian) / 3;
-
-        System.out.println("Nama: " + nama + " NIM: " + nim);
-        System.out.println("Kelas: " + kelas + " Absen: " + absen);
-        System.out.println("Nilai Akhir: " + nilaiAkhir);
+        System.out.print("Masukkan nilai UTS: ");
+        nilaiUTS = sc.nextDouble();
+        System.out.print("Masukkan nilai UAS: ");
+        nilaiUAS = sc.nextDouble();
+        System.out.print("Masukkan nilai akhir: ");
+        nilaiAkhir = sc.nextDouble();
+       
+        nilaiAkhir = (nilaiKuis / 100 * 20) + (nilaiTugas / 100 * 15) + (nilaiUTS / 100 * 30) + (nilaiUAS / 100 * 35);
+       
+        System.out.printf("Output:\nNAma\t: %s\nNIM\t: %s\nKelas\t: %s\nAbsen\t: %s\nNilai Akhir\t: %s", nama, nim, kelas, absen, nilaiAkhir);
     }
 }
